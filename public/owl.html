@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Numbers</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="./stylesheets/style.css">
+    </head>
+    
+    <body>
+        
+        <h2>Enter a number to learn about</h2>
+        
+        <form>
+        Trivia: <input type="text" id="trivia" value="42"><br>
+        <button id="triviabutton"> Submit</button><br>
+        Fact: <span id="triviadef"><li>42 is the number of little squares forming the left side trail of Microsoft's Windows 98 logo.</li></span>
+        </form>
+        
+        <form>
+        Math: <input type="text" id="mathform" value="5"><br>
+        <button id="mathbutton"> Submit</button><br>
+        Fact: <span id="mathdef"><li>5 is the number of platonic solids.</li></span>
+        </form>
+        
+        <form>
+        Dates: <input type="text" id="dates" value="11/2"><br>
+        
+        <button id="datesbutton"> Submit</button><br>
+        Fact: <span id="datesdef"><li>November 2nd is the day in 1769 that Don Gaspar de Portolà leads the first documented European visit to San Francisco Bay.</li></span>
+        </form>
+        
+        
+        
+        <script>
+            $("#triviabutton").click(function(event){
+                event.preventDefault();
+                var url ="integer?q="+$("#trivia").val() +"/trivia";
+                console.log(url);
+                $.getJSON(url, function(data){
+                    console.log(data);
+                    
+                    var everything ="<li>"+data.text+"</li>";
+                    
+                    $("#triviadef").html(everything);
+                    
+                });
+            });
+        </script>
+        
+        <script>
+            $("#mathbutton").click(function(event){
+                event.preventDefault();
+                var url ="integer?q="+$("#mathform").val() + "/math";
+                console.log(url);
+                $.getJSON(url, function(data){
+                    console.log(data);
+                    
+                    var everything ="<li>"+data.text+"</li>";
+                    
+                    $("#mathdef").html(everything);
+                    
+                });
+            });
+        </script>
+        
+        <script>
+            $("#datesbutton").click(function(event){
+                event.preventDefault();
+                var url ="integer?q="+$("#dates").val() + "/date";
+                console.log(url);
+                $.getJSON(url, function(data){
+                    console.log(data);
+                    
+                    var everything ="<li>"+data.text+"</li>";
+                   
+                    $("#datesdef").html(everything);
+                    
+                });
+            });
+        </script>
+        
+        
+        
+        
+
+    </body>
+</html>

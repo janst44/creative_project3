@@ -1,0 +1,18 @@
+body {
+  background-image: url("https://i.pinimg.com/originals/93/8f/53/938f53048d6d09fa5622334c88906af6.jpg");
+  background-size: cover;                     
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: fixed;
+  font-size: 25px;
+  padding-left: 20%;
+  padding-top: 3%;
+  padding-right: 20%;
+  font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+}
+
+
+a {
+  color: #00B7FF;
+}
